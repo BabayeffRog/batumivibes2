@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'subscribe_title' => 'Subscribe To Our Newsletter',
+    'subscribe_placeholder' => 'Enter your email address ...',
+    'subscribe_button' => 'Subscribe',
+    'call_us' => 'Call Us',
+    'mail_us' => 'Mail Us',
+    'follow_us' => 'Follow Us',
+    'useful_links' => 'Useful Links',
+    'home' => 'Home',
+    'about' => 'About Us',
+    'villas' => 'Villas',
+    'yachts' => 'Yachts',
+    'apartments' => 'Apartments',
+    'transfer' => 'Transfers',
+    'contact' => 'Contact',
+    'our_locations' => 'Our Locations',
+    'batumi_center' => 'Batumi Center',
+    'gonio' => 'Gonio',
+    'makhinjauri' => 'Makhinjauri',
+    'old_boulevard' => 'Old Boulevard',
+    'copyright' => 'Copyright © ' . date('Y') . ' BatumiVibes. All rights reserved.',
+    'terms' => 'Terms of Service',
+];

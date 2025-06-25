@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'subscribe_title' => 'Подпишитесь на нашу рассылку',
+    'subscribe_placeholder' => 'Введите ваш email ...',
+    'subscribe_button' => 'Подписаться',
+    'call_us' => 'Позвоните нам',
+    'mail_us' => 'Напишите нам',
+    'follow_us' => 'Подписывайтесь',
+    'useful_links' => 'Полезные ссылки',
+    'home' => 'Главная',
+    'about' => 'О нас',
+    'villas' => 'Виллы',
+    'yachts' => 'Яхты',
+    'apartments' => 'Квартиры',
+    'transfer' => 'Трансферы',
+    'contact' => 'Контакты',
+    'our_locations' => 'Наши локации',
+    'batumi_center' => 'Центр Батуми',
+    'gonio' => 'Гонио',
+    'makhinjauri' => 'Махинджаури',
+    'old_boulevard' => 'Старый бульвар',
+    'copyright' => 'Авторские права © ' . date('Y') . ' BatumiVibes. Все права защищены.',
+    'terms' => 'Условия использования',
+];
