@@ -56,40 +56,6 @@
     <div class="cs_hero_shape_3"></div>
 </section>
 
-<!-- About Section -->
-<section class="cs_about cs_style_1">
-    <div class="cs_height_140 cs_height_lg_80"></div>
-    <div class="container">
-        <div class="row align-items-center cs_gap_y_40">
-            <div class="col-lg-5">
-                <img src="assets/images/about_img.png" alt="">
-            </div>
-            <div class="col-lg-6 offset-lg-1">
-                <div class="cs_section_heading cs_style_1">
-                    <h3 class="cs_section_title_up">{{ __('home.about_title_up') }}</h3>
-                    <h2 class="cs_section_title cs_semibold cs_fs_56 mb-0 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                        {{ __('home.about_main_title') }}
-                    </h2>
-                </div>
-                <div class="cs_about_text">
-                    <p>{{ __('home.about_p1') }}</p>
-                    <p class="mb-0 cs_accent_color cs_medium cs_fs_18">{{ __('home.about_p2') }}</p>
-                </div>
-                <ul class="cs_list cs_style_1 cs_mp0 cs_fs_18">
-                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_1') }}</li>
-                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_2') }}</li>
-                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_3') }}</li>
-                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_4') }}</li>
-                </ul>
-                <a href="{{ route('about') }}" class="cs_btn cs_style_1 cs_fs_18 cs_medium">
-                    {{ __('home.about_button') }}
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="cs_height_140 cs_height_lg_80"></div>
-</section>
-
 
 <!-- Start featured section -->
 <section class="cs_featured cs_style_1 cs_bg_filed" data-src="assets/images/feature_bg.jpeg">
@@ -164,13 +130,16 @@
                                     <span>{{ $property->area }} m²</span>
                                 </div>
                             </div>
+                            @php
+                                $title = $property->title[app()->getLocale()] ?? $property->title['en'];
+                            @endphp
                             <h2 class="cs_card_title cs_fs_24 cs_medium cs_white_color">
-                                <a href="{{ route('index', $property->slug) }}">
-                                    {{ $property->title }}
+                                <a href="{{ route('property.details', $property->slug) }}">
+                                    {{ $title }}
                                 </a>
                             </h2>
                             <div class="cs_card_action">
-                                <a href="{{ route('index', $property->slug) }}" class="cs_btn cs_style_1 cs_fs_18 cs_medium">
+                                <a href="{{ route('property.details', $property->slug) }}" class="cs_btn cs_style_1 cs_fs_18 cs_medium">
                                     View Details
                                     <svg width="20" height="10" viewBox="0 0 20 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M19.5866 5.69629H0.41235C0.184269 5.69629 0 5.46776 0 5.1849C0 4.90204 0.184269 4.67352 0.41235 4.67352H18.5906L16.0881 1.57004C15.927 1.37028 15.927 1.04587 16.0881 0.846109C16.2492 0.646349 16.5108 0.646349 16.6718 0.846109L19.8792 4.82374C19.9977 4.97076 20.0325 5.1897 19.9681 5.38147C19.9036 5.57164 19.7529 5.69629 19.5866 5.69629Z" fill="currentColor"/>
@@ -190,6 +159,42 @@
 </section>
 
 <!-- End Real Estate Stats Section -->
+
+
+
+<!-- About Section -->
+<section class="cs_about cs_style_1">
+    <div class="cs_height_140 cs_height_lg_80"></div>
+    <div class="container">
+        <div class="row align-items-center cs_gap_y_40">
+            <div class="col-lg-5">
+                <img src="assets/images/about_img.png" alt="">
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <div class="cs_section_heading cs_style_1">
+                    <h3 class="cs_section_title_up">{{ __('home.about_title_up') }}</h3>
+                    <h2 class="cs_section_title cs_semibold cs_fs_56 mb-0 wow fadeInRight" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        {{ __('home.about_main_title') }}
+                    </h2>
+                </div>
+                <div class="cs_about_text">
+                    <p>{{ __('home.about_p1') }}</p>
+                    <p class="mb-0 cs_accent_color cs_medium cs_fs_18">{{ __('home.about_p2') }}</p>
+                </div>
+                <ul class="cs_list cs_style_1 cs_mp0 cs_fs_18">
+                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_1') }}</li>
+                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_2') }}</li>
+                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_3') }}</li>
+                    <li><i class="fa-solid fa-circle-check cs_accent_color"></i> {{ __('home.about_li_4') }}</li>
+                </ul>
+                <a href="{{ route('about') }}" class="cs_btn cs_style_1 cs_fs_18 cs_medium">
+                    {{ __('home.about_button') }}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="cs_height_140 cs_height_lg_80"></div>
+</section>
 
 
 <!-- Start destination Section -->

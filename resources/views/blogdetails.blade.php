@@ -27,10 +27,11 @@
                             <li><i class="fa-regular fa-user cs_accent_color"></i> {{ $blog->author ?? 'Admin' }}</li>
                         </ul>
 
-
-                        <h2>{{ $blog->localizedTitle }}</h2>
-
-                        <p>{!! nl2br(e($blog->localizedContent)) !!}</p>
+                        <h2>{{ $blog->{'title_' . app()->getLocale()} }}</h2>
+                        @php
+                            $content = $blog->content[app()->getLocale()] ?? $blog->content['en'];
+                        @endphp
+                        <p>{!! nl2br(e($content)) !!}</p>
 
 
 

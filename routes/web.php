@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
@@ -31,3 +32,6 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/blogdetails/{slug}','blogDetails')->name('blogdetails');
     Route::get('/contact','contact')->name('contact');
 });
+
+Route::get('/property/{slug}', [PropertyController::class, 'show'])->name('property.details');
+

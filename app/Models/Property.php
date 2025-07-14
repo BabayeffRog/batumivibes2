@@ -3,12 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\TranslatableFields;
 
 class Property extends Model
 {
+    use TranslatableFields;
+
     protected $fillable = [
-        'title', 'description', 'slug', 'location',
-        'bedrooms', 'area', 'type', 'price', 'gallery', 'is_featured'
+        'title',
+        'description',
+        'slug',
+        'purpose',
+        'property_type',
+        'location',
+        'bedrooms',
+        'area',
+        'price',
+        'gallery',
+        'is_featured',
     ];
 
     protected $casts = [
@@ -18,12 +30,9 @@ class Property extends Model
         'is_featured' => 'boolean',
     ];
 
-    public function getTranslated($field)
-    {
-        $locale = app()->getLocale();
-        return $this->{$field}[$locale] ?? $this->{$field}['en'] ?? '';
-    }
-
+    /*
+     * Relationships (optional for future use)
+     */
     public function categories()
     {
         return $this->belongsToMany(Category::class);
@@ -34,16 +43,14 @@ class Property extends Model
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-
     public function destinations()
     {
         return $this->morphToMany(Destination::class, 'destinationable');
     }
-//    public function getImageUrlAttribute()
-//    {
-//        return isset($this->gallery[0])
-//            ? asset('storage/property-gallery/' . $this->gallery[0])
-//            : asset('assets/images/placeholder.jpg');
-//    }
-}
 
+    /*
+     * Accessors from TranslatableFields Trait:
+     * - $property->localized_title
+     * - $property->localized_description
+     */
+}

@@ -9,6 +9,11 @@ trait TranslatableFields
         return $this->title[app()->getLocale()] ?? $this->title['en'];
     }
 
+    public function getLocalizedDescriptionAttribute()
+    {
+        return $this->description[app()->getLocale()] ?? $this->description['en'];
+    }
+
     public function getLocalizedContentAttribute()
     {
         return $this->content[app()->getLocale()] ?? $this->content['en'];

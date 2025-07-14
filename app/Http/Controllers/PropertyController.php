@@ -14,4 +14,12 @@ class PropertyController extends Controller
 
         return view('welcome', compact('featuredProperties'));
     }
+
+
+    public function show($slug)
+    {
+        $property = Property::where('slug', $slug)->firstOrFail();
+
+        return view('propertydetails', compact('property'));
+    }
 }
